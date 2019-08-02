@@ -30,7 +30,7 @@ FROM ${RELEASE_CONTAINER}
 LABEL maintainer="${CONTAINER_MAINTAINER}" \
     version="${BUILD_VERSION}"
 
-COPY --from=build /app/bin/release-plan /usr/local/bin/release-plan
+COPY --from=build /app/bin/* /usr/local/bin/
 
 RUN apk update \
     && apk upgrade \
